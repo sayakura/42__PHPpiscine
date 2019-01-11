@@ -1,0 +1,93 @@
+
+html{
+	overflow-x: hidden;
+}
+h1 {
+	color:white !important;
+	font-size: 3vh;
+}
+.title {
+	color: #ffffff;
+	text-align: center;
+	font-family: 'Major Mono Display', monospace;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 5vh !important;
+}
+#hidden{
+	border:none;
+	
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+td {
+	width: 6vh;
+	height: 6vh;
+}
+h1 {
+	color: #000000;
+	text-align: center;
+	
+	font-family: 'Major Mono Display', monospace;
+	margin: 0;
+}
+h2 {
+	color: #ffffff;
+	text-align: center;
+}
+p {
+	font-size: 1vh;
+	margin: 0;
+}
+body {
+	width: 100%;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBs_qhf-GnfC4SUm4-1Xc6VbKssi8w19a31RvyvVSxqHUQfmXLZg);
+	background-size: 150%;
+}
+.nbr_weight {
+	margin-right: 2px;
+	text-align: right;
+}
+.nbr_bottom {
+	margin-left: 2px;
+	text-align: left;
+}
+.color_old_1 {
+	color: white;
+	background-color: 	#c99bd2;
+}
+.color_old_2 {
+	color: white;
+	background-color: #dbb1ea;
+}
+.color_old_3 {
+	color: white;
+	background-color: #eed0ff;
+}
+.color_old_4 {
+	color: white;
+	background-color: #f4daee;
+}
+.color_old_5 {
+	color: white;
+	background-color: #fbd3e9;
+}
+.color_old_6 {
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	color: white;
+	background-color: #ffd9bf;
+}
+.color_old_7 {
+	color: white;
+	background-color: #ffbdbd;
+}
+.color_old_8 {
+	color: white;
+	background-color: #ff9090;
+}
+.cell{
+	border: solid 1px white;
+}
