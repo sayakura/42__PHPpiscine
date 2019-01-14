@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<title>Rush00</title>
+	</head>
+
+	<header class="navbar">
+		<section class="navbar-section">
+				<a href="..." class="navbar-brand mr-2">RUSH00 <i class="fas fa-home"></i></a>
+		</section>
+		<section class="navbar-section">
+			<a href="/login" class="btn btn-link">Login <i class="fas fa-pen"></i></a>
+			<a href="/signup" class="btn btn-link">Signup <i class="fas fa-pencil-alt"></i></a>
+		</section>
+	</header>
+	<body>
+		<div class="container content" >
+			<ul class="tab">
+				<li class="tab-item active">
+					<a href="#">
+						<i class="fas fa-th-large"></i> All
+					</a>
+				</li>
+				<li class="tab-item">
+					<a href="#">Apple</a>
+				</li>
+				<li class="tab-item">
+					<a href="#">Banana</a>
+				</li>
+				<li class="tab-item">
+					<a href="#">Berries</a>
+				</li>
+			</ul>
+			<div>
+				<div class="columns">
+					<div class="column col-3">
+						<div class="card">
+							<div class="card-image">
+								<img src="https://i5.walmartimages.ca/images/Large/428/5_r/6000195494285_R.jpg" class="img-responsive">
+							</div>
+							<div class="card-header">
+								<div class="card-title h5">Apple</div>
+								<div class="card-subtitle text-gray">Sweet</div>
+							</div>
+							<div class="card-body">
+								An apple is a sweet, edible fruit produced by an apple tree. 
+							</div>
+							<div class="card-footer">
+								<button class="btn btn-primary" onclick="addToCart('Apple', 10)">ADD TO CART $10</button>
+							</div>
+						</div>
+					</div>
+					<div class="column col-3">
+						<div class="card">
+								<div class="card-image">
+									<img src="https://thumbs-prod.si-cdn.com/_oO5E4sOE9Ep-qk_kuJ945_-qo4=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg" class="img-responsive">
+								</div>
+								<div class="card-header">
+									<div class="card-title h5">Banana</div>
+									<div class="card-subtitle text-gray">Soft</div>
+								</div>
+								<div class="card-body">
+									A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.
+								</div>
+								<div class="card-footer">
+									<button class="btn btn-primary" onclick="addToCart('Banana', 20)">ADD TO CART $20</button>
+								</div>
+						</div>
+					</div>
+					<div class="column col-3">
+						<div class="card">
+								<div class="card-image">
+									<img src="https://www.producemarketguide.com/sites/default/files/Commodities.tar/Commodities/strawberries_commodity-page.png" class="img-responsive">
+								</div>
+								<div class="card-header">
+									<div class="card-title h5">Strawberry</div>
+									<div class="card-subtitle text-gray">I like it</div>
+								</div>
+								<div class="card-body">
+									The garden strawberry is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries
+								</div>
+								<div class="card-footer">
+									<button class="btn btn-primary" onclick="addToCart('Strawberry', 30)">ADD TO CART $30</button>
+								</div>
+						</div>
+					</div>
+					<div class="column col-3">
+						<div class="card">
+								<div class="card-image">
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmIiJpcrMx8V4WMtmUfUHy1GWHn6xP1hFdCiXTbJwfseQvs3cl" class="img-responsive">
+								</div>
+								<div class="card-header">
+									<div class="card-title h5">Green apple</div>
+									<div class="card-subtitle text-gray">kind of green</div>
+								</div>
+								<div class="card-body">
+									Just... a green apple
+								</div>
+								<div class="card-footer">
+									<button class="btn btn-primary"  onclick="addToCart('Green-apple', 40)">ADD TO CART $40</button>
+								</div>
+						</div>
+					</div>
+				</div>
+				
+
+
+			</div>
+		</div>
+
+		
+		<div class="popover popover-top" id="shopping-cart">
+			<button class="btn btn-primary" id="shopping-cart-button"><i class="fas fa-shopping-cart"></i></button>
+			<div class="popover-container">
+				<div class="card">
+				<div class="card-header">
+					<h4>List of all items:</h4>
+				</div>
+				<div class="card-body" id="items-list">
+				</div>
+				<div class="card-footer" >
+					Total Price: $ <span id="total-price">0</span>
+				</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	// (function() {
+	// 	var data = localStorage.getItem("list")
+	// 	if (data) {
+	// 		document.getElementById('items-list').innerText = data;
+	// 	}
+	// })();
+
+	function addToCart(name, price){
+		var total = document.getElementById('total-price').innerText;
+		total = parseInt(total);
+		let text = '';
+		let temp = localStorage.getItem("list");
+		let item_arr;
+
+		if (temp)
+			item_arr = JSON.parse()
+		else
+			item_arr = [];
+		item_arr.push({name: name, price: price});
+		for (let i = 0; i < item_arr.length; i++){
+			text += '\n' + item_arr[i].name + ' $' + item_arr[i].price;
+			total += parseInt(item_arr[i].price);
+		}
+		document.getElementById('items-list').innerText = text;
+		document.getElementById('total-price').innerText = total.toString();
+		localStorage.setItem("list", JSON.stringify(item_arr));
+	}
+
+
+</script>
+<style>
+	.card{
+		height: 520px;
+	}
+	.content{
+		padding: 10px 30px 10px 30px;
+	}
+	.navbar{
+		padding: 20px;
+		background-color: #F8F8F8
+	}
+	.img-responsive{
+		height: 250px;
+	}
+	#shopping-cart{
+		right: 150px;
+		bottom: 50px;
+		position: fixed;
+	}
+	#shopping-cart-button {
+		height: 60px;
+		width: 60px;
+		border-radius: 100%;
+		box-shadow: 2px 2px 12px gray;
+	}
+	.fa-shopping-cart{
+		font-size: 25px;
+	}
+	#items-list{
+		overflow-y: scroll;
+	}
+</style>
